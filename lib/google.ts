@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxutAtwz6Qbe5tKYY0b5NQqghoB0j_NfCDYmsh_ZEy9YhPoNZyWJRXr4e_zmb04MzQN/exec";
+  "https://script.google.com/macros/s/AKfycbx_J4Ia1iyTEm1ln2vZR2HKfNzN8FVy21VjmLVS9M8cD4eeCPlcl-wt02ijb1XRfAhY/exec";
 
 export async function loginUsuario(
   usuario: string,
