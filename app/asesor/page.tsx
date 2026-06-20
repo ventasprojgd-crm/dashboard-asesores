@@ -196,6 +196,57 @@ async function cargarLeads() {
           padding: "30px",
         }}
       >
+        <div
+  style={{
+    width: "100%",
+    height: "130px",
+    background:
+      "linear-gradient(135deg,#ffffff,#f0fdf4)",
+    borderRadius: "20px",
+    marginBottom: "25px",
+    display: "flex",
+    alignItems: "center",
+    padding: "20px 30px",
+    boxShadow:
+      "0 8px 25px rgba(0,0,0,.08)",
+  }}
+>
+  <img
+    src="/logo.jpeg"
+    alt="Bionatural"
+    style={{
+      height: "90px",
+      objectFit: "contain",
+    }}
+  />
+
+  <div
+    style={{
+      marginLeft: "20px",
+    }}
+  >
+    <h2
+      style={{
+        margin: 0,
+        color: "#166534",
+        fontSize: "38px",
+        fontWeight: "800",
+      }}
+    >
+      Bionatural J&G
+    </h2>
+
+    <p
+      style={{
+        margin: 0,
+        color: "#64748b",
+        fontSize: "18px",
+      }}
+    >
+      Salud y Calidad de Vida
+    </p>
+  </div>
+</div>
         <h1
   style={{
     fontSize: "48px",
