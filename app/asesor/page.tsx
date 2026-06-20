@@ -186,6 +186,26 @@ async function cargarLeads() {
 >
   📋 Leads
 </button>
+<button
+  onClick={() => {
+    localStorage.removeItem("asesor");
+    window.location.href = "/login";
+  }}
+  style={{
+    background: "#ef4444",
+    color: "white",
+    border: "none",
+    padding: "12px",
+    borderRadius: "10px",
+    cursor: "pointer",
+    marginTop: "15px",
+    width: "100%",
+    fontWeight: "600",
+  }}
+>
+  🚪 Cerrar Sesión
+</button>
+
 
       </div>
 </aside>  
