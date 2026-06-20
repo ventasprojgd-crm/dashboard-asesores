@@ -290,10 +290,10 @@ const res = await fetch(
     marginBottom: "30px",
   }}
 >
-          Bienvenido José
+          Bienvenido {localStorage.getItem("asesor")}
         </p>
         <p>
-  Bienvenido José
+  Bienvenido {localStorage.getItem("asesor")}
 </p>
 
 <button
