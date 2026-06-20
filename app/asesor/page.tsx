@@ -282,19 +282,6 @@ const res = await fetch(
           Dashboard Asesor
         </h1>
 
-        <p
-  style={{
-    color: "#334155",
-    fontSize: "20px",
-    fontWeight: "500",
-    marginBottom: "30px",
-  }}
->
-          Bienvenido 
-        </p>
-        <p>
-  Bienvenido {localStorage.getItem("asesor")}
-</p>
 
 <button
   onClick={() =>
