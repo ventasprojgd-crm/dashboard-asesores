@@ -83,7 +83,7 @@ useEffect(() => {
 }, []);
 async function cargarOrdenes() {
 
-  const asesor = "JOSE";
+  const asesor = localStorage.getItem("asesor");
   alert(asesor);
   console.log("ASESOR:", asesor);
   window.open(
