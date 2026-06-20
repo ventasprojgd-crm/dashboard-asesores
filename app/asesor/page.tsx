@@ -60,9 +60,11 @@ useEffect(() => {
 async function cargarDashboard() {
  
 
-  const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbx_J4Ia1iyTEm1ln2vZR2HKfNzN8FVy21VjmLVS9M8cD4eeCPlcl-wt02ijb1XRfAhY/exec?api=dashboard&asesor=JOSE"
-  );
+  const asesor = localStorage.getItem("asesor");
+
+const res = await fetch(
+  `https://script.google.com/macros/s/AKfycbx_J4Ia1iyTEm1ln2vZR2HKfNzN8FVy21VjmLVS9M8cD4eeCPlcl-wt02ijb1XRfAhY/exec?api=dashboard&asesor=${asesor}`
+);
 
   const data = await res.json();
   console.log(data);
@@ -119,9 +121,11 @@ async function cargarLeads() {
 
 }
 
-  const res = await fetch(
-    "https://script.google.com/macros/s/AKfycbx_J4Ia1iyTEm1ln2vZR2HKfNzN8FVy21VjmLVS9M8cD4eeCPlcl-wt02ijb1XRfAhY/exec?api=leads&asesor=JOSE"
-  );
+  const asesor = localStorage.getItem("asesor");
+
+const res = await fetch(
+  `https://script.google.com/macros/s/AKfycbx_J4Ia1iyTEm1ln2vZR2HKfNzN8FVy21VjmLVS9M8cD4eeCPlcl-wt02ijb1XRfAhY/exec?api=leads&asesor=${asesor}`
+);
 
   const data = await res.json();
 
