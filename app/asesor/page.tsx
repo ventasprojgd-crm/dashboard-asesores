@@ -952,6 +952,7 @@ const res = await fetch(
   placeholder="Valor Venta"
   id="valorVenta"
   type="number"
+
   style={{
   width: "100%",
   padding: "12px",
@@ -963,6 +964,22 @@ const res = await fetch(
   fontWeight: "500",
 }}
 />
+<textarea
+  id="comentariosOrden"
+  placeholder="Comentarios de la orden..."
+  style={{
+    width: "100%",
+    minHeight: "100px",
+    padding: "12px",
+    marginBottom: "12px",
+    border: "1px solid #cbd5e1",
+    borderRadius: "10px",
+    background: "#ffffff",
+    color: "#111827",
+    fontWeight: "500",
+    resize: "vertical",
+  }}
+></textarea>
 <button
   style={{
     width: "100%",
@@ -1006,6 +1023,8 @@ const res = await fetch(
 
     const valorVenta =
       (document.getElementById("valorVenta") as HTMLInputElement).value;
+      const comentarios =
+  (document.getElementById("comentariosOrden") as HTMLTextAreaElement).value;
       
 
     const respuesta = await fetch(
@@ -1026,6 +1045,7 @@ const res = await fetch(
           direccion,
           barrio,
           referencia,
+          comentarios,
         }),
       }
     );
