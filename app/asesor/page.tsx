@@ -61,7 +61,7 @@ useEffect(() => {
 useEffect(() => {
   const intervalo = setInterval(() => {
     setMostrarAviso((v) => !v);
-  }, 15000);
+  }, 900000);
 
   return () => clearInterval(intervalo);
 }, []);
