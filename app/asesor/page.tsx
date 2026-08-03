@@ -59,8 +59,22 @@ useEffect(() => {
 
 }, [leadSeleccionado]);
 useEffect(() => {
+  const cicloAviso = () => {
+    // Mostrar el aviso
+    setMostrarAviso(true);
+
+    // Ocultarlo después de 15 segundos
+    setTimeout(() => {
+      setMostrarAviso(false);
+    }, 15000);
+  };
+
+  // Mostrar al abrir la página
+  cicloAviso();
+
+  // Repetir cada 15 minutos
   const intervalo = setInterval(() => {
-    setMostrarAviso((v) => !v);
+    cicloAviso();
   }, 900000);
 
   return () => clearInterval(intervalo);
