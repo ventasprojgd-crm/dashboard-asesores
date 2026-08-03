@@ -48,6 +48,7 @@ alert("Lead guardado correctamente");
 const [leads, setLeads] = useState<any[]>([]);
 const [ordenes, setOrdenes] = useState<any[]>([])
 const [mostrarFormulario, setMostrarFormulario] = useState(false);
+const [mostrarAviso, setMostrarAviso] = useState(true);
 
 const [leadSeleccionado, setLeadSeleccionado] = useState<any>(null);
 useEffect(() => {
@@ -57,6 +58,13 @@ useEffect(() => {
   }
 
 }, [leadSeleccionado]);
+useEffect(() => {
+  const intervalo = setInterval(() => {
+    setMostrarAviso((v) => !v);
+  }, 15000);
+
+  return () => clearInterval(intervalo);
+}, []);
 async function cargarDashboard() {
  
 
@@ -343,6 +351,7 @@ const res = await fetch(
       fontSize: "24px",
       fontWeight: "700",
     }}
+    
   >
     💰 PRECIOS OFICIALES
   </h2>
@@ -394,6 +403,51 @@ const res = await fetch(
     ))}
   </div>
 </div>
+{mostrarAviso && (
+  <div
+    style={{
+      background: "linear-gradient(135deg,#fff7cc,#fde68a)",
+      border: "3px solid #f59e0b",
+      borderRadius: "20px",
+      padding: "25px",
+      marginBottom: "25px",
+      textAlign: "center",
+      boxShadow: "0 8px 25px rgba(245,158,11,.3)",
+    }}
+  >
+    <h2
+      style={{
+        margin: 0,
+        fontSize: "36px",
+        fontWeight: "900",
+        color: "#111827",
+      }}
+    >
+      📢 IMPORTANTE
+    </h2>
+
+    <p
+      style={{
+        marginTop: "20px",
+        fontSize: "28px",
+        fontWeight: "800",
+        lineHeight: "1.6",
+      }}
+    >
+      DEBEMOS INDICARLE AL CLIENTE QUE EL PAQUETE
+      <br />
+      <span style={{ color: "#dc2626" }}>
+        LLEGA DE 3 A 5 DÍAS
+      </span>
+      <br />
+      QUE SE COMPROMETA A RECIBIR EL PEDIDO
+      <br />
+      Y QUE SERÁ CONTACTADO
+      <br />
+      POR EL ÁREA LOGÍSTICA.
+    </p>
+  </div>
+)}
         {/* DASHBOARD */}
         {vista === "dashboard" && (
           <div
