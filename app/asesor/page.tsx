@@ -327,6 +327,73 @@ const res = await fetch(
 >
   📚 Material de Apoyo
 </button>
+<div
+  style={{
+    background: "#f0fdf4",
+    border: "2px solid #22c55e",
+    borderRadius: "15px",
+    padding: "20px",
+    marginBottom: "25px",
+  }}
+>
+  <h2
+    style={{
+      color: "#166534",
+      marginBottom: "15px",
+      fontSize: "24px",
+      fontWeight: "700",
+    }}
+  >
+    💰 PRECIOS OFICIALES
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(5,1fr)",
+      gap: "15px",
+    }}
+  >
+    {[
+      ["1 FRASCO", "$80.000"],
+      ["2 FRASCOS", "$140.000"],
+      ["3 FRASCOS", "$170.000"],
+      ["4 FRASCOS", "$220.000"],
+      ["5 FRASCOS", "$250.000"],
+    ].map(([titulo, precio], i) => (
+      <div
+        key={i}
+        style={{
+          background: "white",
+          padding: "15px",
+          borderRadius: "12px",
+          textAlign: "center",
+          boxShadow: "0 3px 10px rgba(0,0,0,.1)",
+        }}
+      >
+        <div
+          style={{
+            fontWeight: "700",
+            color: "#166534",
+            marginBottom: "8px",
+          }}
+        >
+          {titulo}
+        </div>
+
+        <div
+          style={{
+            fontSize: "26px",
+            fontWeight: "800",
+            color: "#16a34a",
+          }}
+        >
+          {precio}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
         {/* DASHBOARD */}
         {vista === "dashboard" && (
           <div
