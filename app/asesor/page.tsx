@@ -530,12 +530,13 @@ const res = await fetch(
 </h2>
 
             <table
-  style={{
+    style={{
     width: "100%",
     marginTop: "20px",
-    
+    tableLayout: "auto",
   }}
 >
+  
 
               <thead>
                 <tr>
@@ -671,7 +672,7 @@ const res = await fetch(
       e.target.value.trim() !== "" ? "#111827" : "#ffffff";
   }}
   style={{
-    width: "180px",
+    width: "280px",
     minHeight: "40px",
     maxHeight: "180px",
     padding: "8px",
@@ -719,6 +720,7 @@ const res = await fetch(
     padding: "10px 15px",
     borderRadius: "8px",
     cursor: "pointer",
+    marginRight: "8px",
   }}
   onClick={() => guardarLead(lead)}
 >
