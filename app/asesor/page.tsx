@@ -327,9 +327,10 @@ const res = await fetch(
   📦 Mis Órdenes
 </button>
 <button
+
   onClick={() =>
     window.open(
-      "https://drive.google.com/drive/folders/1C5_oznx2YZG_ti0j_qx_q_9Ct3mDLaQe?usp=sharing",
+      "https://docs.google.com/spreadsheets/d/1PawcY5N_FjDQzstIEjD4BUSbcrT3GPWjkZUNgXCpfu8/edit?usp=sharing",
       "_blank"
     )
   }
@@ -347,76 +348,10 @@ const res = await fetch(
     boxShadow: "0 8px 20px rgba(34,197,94,.35)",
   }}
 >
-  📚 Material de Apoyo
+
+  🩸 Blood Sugar Complex
 </button>
-<div
-  style={{
-    background: "#f0fdf4",
-    border: "2px solid #22c55e",
-    borderRadius: "15px",
-    padding: "20px",
-    marginBottom: "25px",
-  }}
->
-  <h2
-    style={{
-      color: "#166534",
-      marginBottom: "15px",
-      fontSize: "24px",
-      fontWeight: "700",
-    }}
-    
-  >
-    💰 PRECIOS OFICIALES
-  </h2>
 
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(5,1fr)",
-      gap: "15px",
-    }}
-  >
-    {[
-      ["1 FRASCO", "$80.000"],
-      ["2 FRASCOS", "$140.000"],
-      ["3 FRASCOS", "$170.000"],
-      ["4 FRASCOS", "$220.000"],
-      ["5 FRASCOS", "$250.000"],
-    ].map(([titulo, precio], i) => (
-      <div
-        key={i}
-        style={{
-          background: "white",
-          padding: "15px",
-          borderRadius: "12px",
-          textAlign: "center",
-          boxShadow: "0 3px 10px rgba(0,0,0,.1)",
-        }}
-      >
-        <div
-          style={{
-            fontWeight: "700",
-            color: "#166534",
-            marginBottom: "8px",
-          }}
-        >
-          {titulo}
-        </div>
-
-        <div
-          style={{
-            fontSize: "26px",
-            fontWeight: "800",
-            color: "#16a34a",
-          }}
-        >
-          {precio}
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
 {mostrarAviso && (
   <div
     style={{
@@ -720,20 +655,25 @@ const res = await fetch(
 </td>
 <td>
 
-  <input
-  type="text"
+  <textarea
   id={`comentario-${lead.id}`}
-  defaultValue={lead.comentario}
-  onChange={(e) => {
-  e.target.style.background =
-    e.target.value.trim() !== "" ? "#ffffff" : "#0f172a";
-
-  e.target.style.color =
-    e.target.value.trim() !== "" ? "#111827" : "#ffffff";
-}}
+  defaultValue={lead.comentario || ""}
   placeholder="Escribir comentario..."
+  rows={1}
+  onChange={(e) => {
+    e.target.style.height = "auto";
+    e.target.style.height = `${e.target.scrollHeight}px`;
+
+    e.target.style.background =
+      e.target.value.trim() !== "" ? "#ffffff" : "#0f172a";
+
+    e.target.style.color =
+      e.target.value.trim() !== "" ? "#111827" : "#ffffff";
+  }}
   style={{
     width: "180px",
+    minHeight: "40px",
+    maxHeight: "180px",
     padding: "8px",
     borderRadius: "8px",
     border: lead.comentario
@@ -746,6 +686,10 @@ const res = await fetch(
       ? "#111827"
       : "#ffffff",
     fontWeight: "500",
+    resize: "none",
+    overflowY: "auto",
+    fontFamily: "inherit",
+    boxSizing: "border-box",
   }}
 />
 </td>
